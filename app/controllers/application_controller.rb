@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
+  
   protect_from_forgery with: :exception
+  
   def require_login
     if !logged_in?
       redirect_to root_path
@@ -15,4 +17,5 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+  
 end
